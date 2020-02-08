@@ -9,10 +9,8 @@ let addUserInput = (event) => {
     event.preventDefault();
     if (isNaN(parseInt(domElements.userInput.value))) return;
     let result = parseInt(domElements.resultUI.textContent) + parseInt(domElements.userInput.value);
-    // console.log(typeOf(result));
     domElements.applyClassToResultUI(result);
     domElements.setText(domElements.resultUI, result);
-    domElements.clearUserInput();
 };
 let subUserInput = (event) => {
     event.preventDefault();
@@ -20,7 +18,6 @@ let subUserInput = (event) => {
     let result = parseInt(domElements.resultUI.textContent) - parseInt(domElements.userInput.value);
     domElements.applyClassToResultUI(result);
     domElements.setText(domElements.resultUI, result);
-    domElements.clearUserInput();
 };
 
 
@@ -37,9 +34,6 @@ function DOMElements() {
     },
     this.setText = (element, value) => {
         element.textContent = value;
-    },
-    this.clearUserInput = () => {
-        this.userInput.value = '';
     }
 };
 
